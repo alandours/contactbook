@@ -1,0 +1,645 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --maincolor: #000;
+    --secondarycolor: #1db954;
+    --errorcolor: #dc2f3b;
+    --contrastcolor: #fff;
+    --fontfamily: 'Open Sans';
+    --grey: #ddd;
+    --backgroundgrey: #f8f8f8;
+    --h1size: 1.3rem;
+    --h2size: 1.2rem;
+    --h3size: 1.1rem;
+    --textsize: 0.9rem;
+    --infosize: 0.95rem;
+}
+
+@font-face{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Open Sans';
+    font-weight: 600;
+    src: url('../fonts/OpenSans-SemiBold.ttf');
+}
+
+@font-face{
+    font-family: 'Open Sans';
+    font-weight: 700;
+    src: url('../fonts/OpenSans-Bold.ttf');
+}
+
+@font-face{
+    font-family: 'Open Sans';
+    font-weight: 800;
+    src: url('../fonts/OpenSans-ExtraBold.ttf');
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: var(--fontfamily);
+    font-size: var(--textsize);
+    font-weight: 400;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--backgroundgrey);
+}
+
+main{
+    margin: auto;
+}
+
+header, footer{
+    background: var(--maincolor);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    color: var(--contrastcolor);
+}
+
+.sitename{
+    font-size: var(--h1size);
+}
+
+.sitename a{
+    color: var(--contrastcolor);
+}
+
+/* .navbar{
+    display: flex;
+    align-items: center;
+} */
+
+.navbar{
+    display: flex;
+    align-items: center;
+    
+}
+
+.navbar ul{
+    display: flex;   
+}
+
+.navbar li + li{
+    margin-left: 2rem;
+}
+
+.navbar a{
+    color: var(--contrastcolor);
+    font-size: 0.5rem;
+}
+
+.navbar i{
+    margin: 0 !important;
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 3px;
+    color: #000;
+    font-weight: 600;
+}
+
+.btn .fa, a .fa{
+    margin-right: 0.5rem;;
+}
+
+.btn-s{
+    background: var(--secondarycolor);
+}
+
+.btn-r{
+    background: var(--errorcolor);
+}
+
+.btn-m{
+    background: var(--maincolor);
+    color: white;
+}
+
+.btn + .btn{
+    margin-top: 5px;
+}
+
+/* Home */
+
+.main-menu{
+    width: 700px;
+    display: flex;
+    justify-content: space-evenly;
+    background: var(--backgroundgrey);
+}
+
+.main-menu a{
+    background: red;
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--maincolor);
+    font-size: var(--h2size);
+    font-weight: 600;
+    transition: 100ms ease;
+}
+
+.main-menu a:hover{
+    background: var(--secondarycolor);
+    border: 1px solid var(--secondarycolor);
+    transition: 100ms ease;
+}
+
+.main-menu i{
+    margin-right: 0;
+    margin-bottom: 1rem;
+    color: var(--secondarycolor);
+    transition: 100ms ease;
+}
+
+.main-menu a:hover i{
+    color: var(--maincolor) !important;
+    transition: 100ms ease;
+}
+
+/* Contact list */
+
+#contactbook{
+    display: flex;
+    background: #fff;
+    border: 1px solid var(--grey);
+    border-radius: 3px; 
+    width: 1000px;
+    max-height: 80vh;
+}
+
+#contacts{
+    border-right: 1px solid var(--grey);
+    width: 25%;
+    height: 79vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.search-container{
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 100%;
+}
+
+.search-container .fa{
+    position: absolute;
+    top: 9px;
+    left: 6px;
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+.search-field{
+    width: 100%;
+    font-size: var(--textsize);
+    border: 1px solid var(--grey);
+    padding: 0.4rem 1.5rem;
+    border-radius: 3px 0 0 0;
+    border: 0;
+}
+
+.contact-list{
+    margin-top: 30px;
+}
+
+.contact-list li{
+    padding: 0.45rem;
+}
+
+.contact a{
+    color: #000;
+}
+
+.contact:hover{
+    background: #f0f0f0;
+    transition: 150ms ease;
+}
+
+.contact + .contact{
+    border-top: 1px solid var(--grey);
+}
+
+.letter{
+    font-weight: 700;
+    background: var(--secondarycolor);
+    color: var(--contrastcolor);
+}
+
+.contact-count{
+    border-top: 1px solid var(--grey);
+    padding: 1rem !important;
+    text-align: center;
+    color: #777
+}
+
+/* Contact Info */
+
+#contact-info{
+    display:flex;
+    width: 75%;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    position: relative;
+}
+
+.btn-edit{
+    background: var(--secondarycolor);
+    position: absolute;
+    right: 2rem;
+}
+
+.btn-back{
+    background: var(--secondarycolor);
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+.btn-permalink{
+    position: absolute;
+    left: 2rem;
+    color: var(--secondarycolor)
+}
+
+.profile-picture{
+    width: 250px;
+    height: 250px;
+    min-height: 250px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 6px solid var(--secondarycolor);
+}
+
+.main-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid var(--grey);
+}
+
+.username{
+    font-size: var(--h2size);
+}
+
+.age{
+    font-weight: 600;
+    color: #777;
+}
+
+.secondary-info{
+    font-size: var(--infosize);
+}
+
+.info-section{
+    padding: 1rem 0;
+}
+
+.info-section + .info-section {
+    border-top: 1px solid var(--grey);
+}
+
+.info-section li{
+    display: flex;
+    margin: 0.4rem;
+}
+
+.info-section a{
+    font-weight: 600;   
+    color: var(--secondarycolor);
+}
+
+.info-tag{
+    width: 120px;
+    color: #777;
+    margin-right: 10px;
+    word-wrap: break-word;
+}
+
+/* Add contact */
+
+.form{
+    padding: 1.25rem 1rem 0;
+    margin: 1rem 1rem 0;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #fff;
+}
+
+.form h2{
+    text-align: center;
+    flex-basis: 100%;
+}
+
+.form-section + .form-section {
+    border-top: 1px solid var(--grey);
+}
+
+legend{
+    background: var(--maincolor);
+    padding: 0.25rem 0.5rem;;   
+    border-radius: 2px;
+    color: var(--contrastcolor);
+}
+
+fieldset{
+    border: 1px solid var(--maincolor);
+    border-radius: 2px;
+    padding: 1.5rem;
+    
+}
+
+fieldset + fieldset{
+    margin-top: 2rem;
+}
+
+label{
+    display: flex;
+    justify-content: flex-end;
+}
+
+label + label, .invalid-msg + label{
+    margin-top: 1rem;
+}
+
+.form input, select, fieldset a{
+    font-size: var(--textsize);
+    outline: none;
+    border: 1px solid var(--grey);
+    padding: 2px;
+    margin-left: 15px;
+}
+
+.form-personal input{
+    width: 420px;
+}
+
+select{
+    width: 100px;
+}
+
+.btn-new{
+    display: flex;
+    margin: 0.25rem;
+    color: #777;
+    border: 0;
+    justify-content: right;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.btn-new i{
+    margin-right: 0.5rem;
+}
+
+input:not([class='search-field']):focus{
+    border: 1px solid var(--maincolor);
+}
+
+button{
+    font-size: var(--textsize);
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-content{
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.button-container{
+    background: none;
+    display: flex;
+    justify-content: center;
+}
+
+.button-background{
+    background: #fff;
+    width: 100%;
+    padding: 1rem 0;
+    
+}
+
+.form-notes textarea{
+    resize: none;
+    width: 100%;
+    font-size: var(--textsize);
+    font-family: var(--fontfamily);
+    padding: 2px;
+    height: 5rem;
+    border: 1px solid var(--grey);
+}
+
+.form-notes textarea:focus{
+    border: 1px solid var(--maincolor);
+}
+
+.input-custom{
+    width: 80px;
+}
+
+input[readonly]{
+    background: var(--grey);
+}
+
+.form-photo-container{
+    position: relative;
+}
+
+.label-photo{
+    width: 200px;
+    height: 200px;
+    min-height: 200px;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    margin: 1.5rem auto;
+}
+
+.form-photo{
+    width: 200px;
+    height: 200px;
+    min-height: 200px;
+    object-fit: cover;
+    border-width: 6px;
+    display: block;
+}
+
+.label-photo:hover .upload-photo{
+    opacity: 1;
+}
+
+.photo-input{
+    display: none;
+}
+
+.upload-photo{
+    background: var(--secondarycolor);
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: var(--infosize);
+    cursor: pointer;
+    opacity: 0;
+    transition: 200ms ease;
+}
+
+.upload-photo i{
+    margin-right: 0.5rem; 
+}
+
+.delete-photo{
+    width: 150px;
+    margin: 0 auto;
+    background: var(--errorcolor);
+    color: #000;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.25rem;   
+    display: none; 
+}
+
+.delete-photo-edit{
+    display: flex !important;
+}
+
+.no-photo{
+    display: none;
+}
+
+.not-found{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.not-found-emoji{
+    margin: auto;
+    font-size: 3rem;
+}
+
+.not-found-message{
+    font-size: var(--h2size);
+    font-weight: 100;
+}
+
+/* Messages */
+
+#msg-flash{
+    padding: 8px;
+    margin: 10px 0;
+    text-align: center;
+    display: none;
+}
+
+.msg-success{
+    border-radius: 2px;
+    background: #50c278 !important;
+    border: 1px solid var(--secondarycolor);
+}
+
+.msg-error{
+    border: 1px solid var(--errorcolor);
+    background: #f53f3f;
+}
+
+.msg-error li + li{
+    margin-top: 8px;
+}
+
+.msg-link{
+    color: #000;
+    font-weight: 700;
+}
+
+.invalid-msg{
+    color: var(--errorcolor);
+    font-size: 0.8rem;
+    text-align: right;
+    display: block;
+}
+
+.invalid{
+    border: 1px solid var(--errorcolor) !important;
+}
+
+/* Modal */
+
+.modal-container{
+    background: rgba(256,256,256,0.5);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background: #fff;
+    border: 1px solid var(--maincolor);
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: right;
+    position: relative;
+}
+
+.modal-title{
+    font-size: var(--h3size);
+    font-weight: 600;
+    margin: 0.8rem 0;
+}
+
+.modal-close{
+    position: absolute;
+    color: #000;
+    top: 10px;
+}
+
+.modal a, .modal button{
+    display: inline-block;
+}
