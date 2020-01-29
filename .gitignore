@@ -1,5 +1,6 @@
 /node_modules
 /public/hot
+/public/js/app.js
 /public/storage
 /storage/*.key
 /vendor
@@ -12,3 +13,5 @@ npm-debug.log
 yarn-error.log
 public/img/contacts/*
 !public/img/contacts/contact.jpg
+notes.txt
+*.sql
